@@ -41,18 +41,6 @@ export default Vue.extend({
           position: 'creator',
           country: 'germany',
           data: {}
-        },
-        {
-          id: '274889352688173059',
-          position: 'creator',
-          country: 'germany',
-          data: {}
-        },
-        {
-          id: '94490510688792576',
-          position: 'creator',
-          country: 'germany',
-          data: {}
         }
       ],
       socket: {},
