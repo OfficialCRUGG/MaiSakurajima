@@ -28,17 +28,17 @@ function generateWordsArray(string: string) {
 export default Vue.extend({
     data({ $i18n }: any) {
         return {
-            words: generateWordsArray($i18n.messages[$i18n.locale]['home.wordCloud.words'])
+            words: generateWordsArray($i18n.messages[$i18n.locale]['home.wordCloud.words'] || $i18n.messages.en['home.wordCloud.words'])
         }
     }
 })
 </script>
 
-<style scoped>
+<style>
 .word {
     opacity: 80%;
     text-shadow: 0 0 0px rgba(255,255,255,0.5);
-    transition-duration: .5s;
+    transition-duration: .25s;
 }
 
 .word:hover {

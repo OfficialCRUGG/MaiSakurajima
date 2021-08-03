@@ -12,6 +12,18 @@
       <h1 class="text-7xl font-bold">{{ $t("team.header.title") }}</h1>
       <h2 class="text-4xl font-semibold mt-2">{{ $t("team.header.subtitle") }}</h2>
     </div>
+    <div v-else-if="page === 'contact'" class="text-white text-center">
+      <h1 class="text-7xl font-bold">{{ $t("contact.header.title") }}</h1>
+      <h2 class="text-4xl font-semibold mt-2">{{ $t("contact.header.subtitle") }}</h2>
+    </div>
+    <div v-else-if="page === 'credits'" class="text-white text-center">
+      <h1 class="text-7xl font-bold">{{ $t("credits.header.title") }}</h1>
+      <h2 class="text-4xl font-semibold mt-2">{{ $t("credits.header.subtitle") }}</h2>
+    </div>
+    <div v-else-if="page === 'contribute'" class="text-white text-center">
+      <h1 class="text-7xl font-bold">{{ $t("contribute.header.title") }}</h1>
+      <h2 class="text-4xl font-semibold mt-2">{{ $t("contribute.header.subtitle") }}</h2>
+    </div>
     <div v-else>
       <div class="text-center text-white">
         <h1 class="text-7xl font-bold">Mai Sakurajima</h1>
@@ -24,7 +36,7 @@
       </div>
 
       <div class="flex text-white space-x-5 absolute bottom-10 left-10">
-        <p v-for="lang in langs" :key="lang.value" @click="$i18n.locale = lang.value" :class="`cursor-pointer  ${$i18n.locale === lang.value ? '' : 'opacity-50'}`">{{ lang.name }}</p>
+        <p v-for="lang in langs" :key="lang.value" @click="setLanguage(lang.value)" :class="`cursor-pointer  ${$i18n.locale === lang.value ? '' : 'opacity-50'}`">{{ lang.name }}</p>
       </div>
       <p class="text-white absolute hidden md:block bottom-10 right-10">{{ $t("home.header.notAffiliated") }}</p>
       <p class="text-white absolute block md:hidden bottom-17 left-10">{{ $t("home.header.notAffiliated") }}</p>
@@ -42,16 +54,25 @@ export default Vue.extend({
   },
   data() {
     return {
-      langs: [
-        {
-          name: 'English',
-          value: 'en'
-        },
-        {
-          name: 'Deutsch',
-          value: 'de'
-        }
-      ]
+
+    }
+  },
+  computed: {
+    langs() {
+      let langs: any = []
+      this.$i18n.availableLocales.forEach((lang) => {
+        langs.push({
+          name: this.$i18n.messages[lang]["lang.name"],
+          value: lang
+        })
+      })
+      return langs
+    }
+  },
+  methods: {
+    setLanguage(lang: string) {
+      this.$i18n.locale = lang;
+      localStorage.setItem('maisakurajima-lang', lang)
     }
   }
 })

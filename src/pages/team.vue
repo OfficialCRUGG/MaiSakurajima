@@ -5,7 +5,8 @@
       <div class="max-w-9xl px-10 mx-auto py-10" v-for="category in categories" :key="category">
         <h2 class="font-bold text-5xl mb-3">{{ $t(`team.category.${category}`) }}</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
-          <TeamCard v-for="user in staff" :key="user.id" :id="user.id" :avatar="user.data.discord_user ? user.data.discord_user.avatar : 'undefined'" :username="user.data.discord_user ? user.data.discord_user.username : 'undefined'" :discriminator="user.data.discord_user ? user.data.discord_user.discriminator : '0000'" :status="user.data.discord_user ? user.data.discord_status : 'offline'" :country="user.country" />
+          <p class="text-lg opacity-80" v-if="getStaffByCategory(category).length < 1">{{ $t("team.noMembers") }}</p>
+          <TeamCard v-for="user in getStaffByCategory(category)" :key="user.id" :id="user.id" :avatar="user.data.discord_user ? user.data.discord_user.avatar : 'undefined'" :username="user.data.discord_user ? user.data.discord_user.username : 'undefined'" :discriminator="user.data.discord_user ? user.data.discord_user.discriminator : '0000'" :status="user.data.discord_user ? user.data.discord_status : 'offline'" :country="user.country" />
         </div>
       </div>
     </div>
@@ -24,6 +25,12 @@ function getIndexOfId(ids: any, id: any) {
   return ids.findIndex((i: any) => i.id === id);
 }
 
+function getStaffByCategory(staff: any, category: string) {
+  return staff.filter((user: any) => {
+    return user.categories.includes(category);
+  });
+}
+
 export default Vue.extend({
   data() {
     return {
@@ -38,7 +45,7 @@ export default Vue.extend({
       staff: [
         {
           id: '228965621478588416',
-          position: 'creator',
+          categories: ['creator', 'dev', 'translator', 'image'],
           country: 'germany',
           data: {}
         }
@@ -64,6 +71,11 @@ export default Vue.extend({
         this.staff[getIndexOfId(this.staff, data.d.discord_user.id)].data = data.d
       }
     });
+  },
+  methods: {
+    getStaffByCategory(category: string) {
+      return getStaffByCategory(this.staff, category)
+    }
   }
 })
 </script>
