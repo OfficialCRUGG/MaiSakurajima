@@ -28,7 +28,7 @@
       <div class="text-center text-white px-5">
         <h1 class="text-6xl md:text-7xl font-bold">Mai Sakurajima</h1>
         <h2 class="text-3xl md:text-4xl font-semibold mt-2">{{ $t("home.header.subtitle") }}</h2>
-        <div class="flex flex-col space-y-5 md:flex-row md:space-y-0 items-center justify-center space-x-4 mt-5">
+        <div class="flex flex-col md:flex-row items-center justify-center space-x-0 md:space-x-4 mt-5">
           <Button type="subreddit" users="11,900" link="https://www.reddit.com/r/ChurchofMaiSakurajima/" />
           <Button type="discord" users="800" link="https://discord.gg/FUArCyHxNX" />
         </div>
