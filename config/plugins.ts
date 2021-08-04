@@ -3,9 +3,9 @@ import { NuxtOptionsPlugin } from '@nuxt/types/config/plugin';
 
 // Configuration
 const plugins: NuxtOptionsPlugin[] = [
-    '~/plugins/I18n.js',
-    '~/plugins/VueWordCloud.js',
-    '~/plugins/VueLanyard.js'
+    { src: '~/plugins/I18n.js' },
+    { src: '~/plugins/VueWordCloud.js' },
+    { src: '~/plugins/VueLanyard.js' }
 ]
 
 export default plugins
