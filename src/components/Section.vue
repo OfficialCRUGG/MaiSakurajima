@@ -12,8 +12,8 @@
         <div class="flex justify-center lg:hidden relative">
             <img class="opacity-40" :src="`/img/transparent/${section}.png`">
             <div class="p-10 absolute w-full h-full flex flex-col items-center justify-center text-center">
-                <h1 class="font-bold text-5xl mb-3">{{ $t(`home.section.${section}.title`) }}</h1>
-                <h2 class="font-semibold text-2xl">{{ $t(`home.section.${section}.text`) }}</h2>
+                <h1 class="font-bold text-4xl mb-3">{{ $t(`home.section.${section}.title`) }}</h1>
+                <h2 class="font-semibold text-xl">{{ $t(`home.section.${section}.text`) }}</h2>
             </div>
         </div>
     </div>

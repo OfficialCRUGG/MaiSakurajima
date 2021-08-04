@@ -25,21 +25,21 @@
       <h2 class="text-4xl font-semibold mt-2">{{ $t("contribute.header.subtitle") }}</h2>
     </div>
     <div v-else>
-      <div class="text-center text-white">
-        <h1 class="text-7xl font-bold">Mai Sakurajima</h1>
-        <h2 class="text-4xl font-semibold mt-2">{{ $t("home.header.subtitle") }}</h2>
-        <div class="flex items-center justify-center space-x-4 mt-5">
+      <div class="text-center text-white px-5">
+        <h1 class="text-6xl md:text-7xl font-bold">Mai Sakurajima</h1>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-2">{{ $t("home.header.subtitle") }}</h2>
+        <div class="flex flex-col space-y-5 md:flex-row md:space-y-0 items-center justify-center space-x-4 mt-5">
           <Button type="subreddit" users="11,900" link="https://www.reddit.com/r/ChurchofMaiSakurajima/" />
           <Button type="discord" users="800" link="https://discord.gg/FUArCyHxNX" />
         </div>
-        <p class="absolute w-full left-0 pt-24 text-lg opacity-50 cursor-pointer" @click="$nuxt.$emit('toggleMusic')">{{ $t("home.header.musicToggle") }}</p>
+        <p class="absolute w-full left-0 mt-12 md:mt-24 text-lg opacity-50 cursor-pointer" @click="$nuxt.$emit('toggleMusic')">{{ $t("home.header.musicToggle") }}</p>
       </div>
-
-      <div class="flex text-white space-x-5 absolute bottom-10 left-10">
-        <p v-for="lang in langs" :key="lang.value" @click="setLanguage(lang.value)" :class="`cursor-pointer  ${$i18n.locale === lang.value ? '' : 'opacity-50'}`">{{ lang.name }}</p>
+      <div class="absolute left-0 bottom-0 w-full flex flex-col md:flex-row justify-between md:p-10 p-5 space-y-3 md:space-y-0">
+        <div class="flex text-white space-x-3">
+          <p v-for="lang in langs" :key="lang.value" @click="setLanguage(lang.value)" :class="`cursor-pointer  ${$i18n.locale === lang.value ? '' : 'opacity-50'}`">{{ lang.name }}</p>
+        </div>
+        <p class="text-white">{{ $t("home.header.notAffiliated") }}</p>
       </div>
-      <p class="text-white absolute hidden md:block bottom-10 right-10">{{ $t("home.header.notAffiliated") }}</p>
-      <p class="text-white absolute block md:hidden bottom-17 left-10">{{ $t("home.header.notAffiliated") }}</p>
     </div>
   </div>
 </template>

@@ -2,9 +2,10 @@
     <div class="text-white bg-dark-800 p-10 text-center">
         <h1 class="font-bold text-4xl mt-10">{{ $t("home.wordCloud.title") }}</h1>
         <h2 class="font-semibold text-3xl mt-3">{{ $t("home.wordCloud.subtitle") }}</h2>
-        <vue-word-cloud class="max-w-6xl bg-dark-900 rounded-2xl mx-auto m-10 font-sans" style="height: 600px; width: 100%;" :words="words">
+        <!-- When using nuxt generate, it seems to be ignoring the classes below used for the words, so using them here in a dummy element to make sure they are in the CSS --> <div class="text-white text-xl md:text-5xl hidden"></div>
+        <vue-word-cloud class="max-w-6xl bg-dark-900 rounded-2xl mx-auto m-10 font-sans" style="height: 500px; width: 100%;" :words="words">
             <template slot-scope="{text}">
-                <a :href="`${ $t('home.wordCloud.dicLink', [text]) }`" target="__blank" style="color: white; font-size: 3rem; line-height: 1; " class="font-sans font-semibold word">{{text}}</a>
+                <a :href="`${ $t('home.wordCloud.dicLink', [text]) }`" target="__blank" class="text-white text-xl md:text-5xl font-sans font-semibold word">{{text}}</a>
             </template>
         </vue-word-cloud>
     </div>
