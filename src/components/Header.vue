@@ -30,7 +30,7 @@
         <h2 class="text-4xl font-semibold mt-2">{{ $t("home.header.subtitle") }}</h2>
         <div class="flex items-center justify-center space-x-4 mt-5">
           <Button type="subreddit" users="11,900" link="https://www.reddit.com/r/ChurchofMaiSakurajima/" />
-          <Button type="discord" users="0" link="https://discord.gg/3Raffsd" />
+          <Button type="discord" users="800" link="https://discord.gg/FUArCyHxNX" />
         </div>
         <p class="absolute w-full left-0 pt-24 text-lg opacity-50 cursor-pointer" @click="$nuxt.$emit('toggleMusic')">{{ $t("home.header.musicToggle") }}</p>
       </div>
