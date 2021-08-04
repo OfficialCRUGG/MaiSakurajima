@@ -10,6 +10,11 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  head() {
+    return {
+      title: 'Gallery - Mai Sakurajima',
+    }
+  },
   data() {
     return {
       images: ["2", "1", "4", "5"]

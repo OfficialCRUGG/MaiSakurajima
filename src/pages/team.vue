@@ -32,6 +32,11 @@ function getStaffByCategory(staff: any, category: string) {
 }
 
 export default Vue.extend({
+  head() {
+    return {
+      title: 'Team - Mai Sakurajima',
+    }
+  },
   data() {
     return {
       images: ['2', '1', '4', '5'],
