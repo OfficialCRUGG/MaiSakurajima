@@ -54,5 +54,6 @@
     "team.memberCard.status.idle": "Abwesend",
     "team.memberCard.status.dnd": "Bitte nicht stören",
     "team.memberCard.status.offline": "Offline",
-    "team.memberCard.country.germany": "Deutschland"
+    "team.memberCard.country.germany": "Deutschland",
+    "team.memberCard.country.uk": "Vereinigtes Königreich"
 }

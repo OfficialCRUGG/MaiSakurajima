@@ -53,6 +53,12 @@ export default Vue.extend({
           categories: ['creator', 'dev', 'translator', 'image'],
           country: 'germany',
           data: {}
+        },
+        {
+          id: '94490510688792576',
+          categories: ['domain'],
+          country: 'uk',
+          data: {}
         }
       ],
       socket: {},

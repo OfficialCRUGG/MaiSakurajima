@@ -35,7 +35,8 @@ export default Vue.extend({
     data() {
         return {
             countryEmojis: {
-                germany: '1f1e9-1f1ea'
+                germany: '1f1e9-1f1ea',
+                uk: '1f1ec-1f1e7'
             }
         }
     },

@@ -61,5 +61,6 @@
     "team.memberCard.status.idle": "Idle",
     "team.memberCard.status.dnd": "Do not disturb",
     "team.memberCard.status.offline": "Offline",
-    "team.memberCard.country.germany": "Germany"
+    "team.memberCard.country.germany": "Germany",
+    "team.memberCard.country.uk": "United Kingdom"
 }
